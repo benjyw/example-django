@@ -9,7 +9,7 @@ python_library(
 
 pex_binary(
     name = "manage",
-    entry_point = 'helloworld.manage',
+    entry_point = 'manage.py',
     dependencies = [
         ":helloworld",
     ],
@@ -17,7 +17,7 @@ pex_binary(
 
 pex_binary(
     name = 'gunicorn',
-    entry_point = 'helloworld.gunicorn',
+    entry_point = 'gunicorn.py',
     dependencies = [
         ':helloworld',
     ],
