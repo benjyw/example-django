@@ -7,7 +7,7 @@ from django.db import migrations
 
 
 def create_people_to_greet(apps, schema_editor):
-    PersonToGreet = apps.get_model('greet', 'PersonToGreet')
+    PersonToGreet = apps.get_model("greet", "PersonToGreet")
 
     def create(slug, full_name):
         PersonToGreet(slug=slug, full_name=full_name).save()
@@ -23,7 +23,7 @@ def create_people_to_greet(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('greet', '0001_initial'),
+        ("greet", "0001_initial"),
     ]
 
     operations = [

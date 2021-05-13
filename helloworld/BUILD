@@ -13,7 +13,6 @@ pex_binary(
     dependencies = [
         ":helloworld",
     ],
-    zip_safe=False
 )
 
 pex_binary(
@@ -22,5 +21,4 @@ pex_binary(
     dependencies = [
         ':helloworld',
     ],
-    zip_safe=False,
 )

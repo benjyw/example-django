@@ -5,7 +5,6 @@ from django.urls import path
 
 from helloworld.greet import views
 
-
 urlpatterns = [
-    path('<str:slug>/', views.index, name='index'),
+    path("<str:slug>/", views.index, name="index"),
 ]

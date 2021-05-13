@@ -1,7 +1,7 @@
 # Copyright 2020 Pants project contributors.
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
-from django.http import HttpResponse, Http404
+from django.http import Http404, HttpResponse
 
 from helloworld.greet.models import PersonToGreet
 
