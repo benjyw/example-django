@@ -35,12 +35,3 @@ interpreter_search_paths = ["<PATH>", "<PYENV>"]
 pytest_plugins.add = [
   "pytest-django>=3.9.0,<4",
 ]
-
-[flake8]
-config = "build-support/.flake8"
-
-[isort]
-config = [".isort.cfg"]
-
-[mypy]
-config = "build-support/mypy.ini"
