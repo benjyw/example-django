@@ -12,7 +12,15 @@ pex_binary(
     entry_point = 'helloworld.manage',
     dependencies = [
         ":helloworld",
-        "//:django"
     ],
     zip_safe=False
+)
+
+pex_binary(
+    name = 'gunicorn',
+    entry_point = 'helloworld.gunicorn',
+    dependencies = [
+        ':helloworld',
+    ],
+    zip_safe=False,
 )

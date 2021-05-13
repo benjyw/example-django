@@ -4,14 +4,16 @@
 # `name` defaults to the name of this directory, i.e., `greet`.
 # `sources` defaults to ['*.py', '!*_test.py', '!test_*.py', '!conftest.py'].
 # `dependencies` are inferred.
-python_library()
+python_library(
+    # We depend on migrations explicitly, since Pants cannot infer this dependency.
+    "helloworld/greet/migrations",
+)
 
 # `sources` defaults to ['*_test.py', 'test_*.py', 'conftest.py'].
 # `dependencies` are inferred.
 python_tests(name = 'tests',
     dependencies = [
         "helloworld",  # For settings.py.
-        "helloworld/greet/migrations",
         "//:pytest",
         "//:pytest_ini",
     ]
