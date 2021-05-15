@@ -4,6 +4,6 @@
 from django.db import models
 
 
-class Greeting(models.Model):
-    slug = models.CharField(max_length=30, unique=True)
-    salutation = models.CharField(max_length=30)
+class Person(models.Model):
+    slug = models.CharField(max_length=20, unique=True)
+    full_name = models.CharField(max_length=50)

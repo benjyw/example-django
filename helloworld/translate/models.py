@@ -3,15 +3,17 @@
 
 from django.db import models
 
+from helloworld.greet.models import Greeting
+
 
 class Translation(models.Model):
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=["lang", "english_word"], name="lang_english_word"
+                fields=["greeting", "lang"], name="greeting_lang"
             )
         ]
 
+    greeting = models.ForeignKey(Greeting, on_delete=models.CASCADE)
     lang = models.CharField(max_length=2)
-    english_word = models.CharField(max_length=20)
-    lang_word = models.CharField(max_length=20)
+    translation = models.CharField(max_length=20)

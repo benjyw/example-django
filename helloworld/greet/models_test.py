@@ -3,10 +3,10 @@
 
 import pytest
 
-from helloworld.greet.models import PersonToGreet
+from helloworld.greet.models import Greeting
 
 
 @pytest.mark.django_db
 def test_database_is_seeded():
-    sherlock = PersonToGreet.objects.get(slug="sherlock")
-    assert "Sherlock Holmes" == sherlock.full_name
+    hello = Greeting.objects.get(slug="hello")
+    assert "Hello" == hello.salutation

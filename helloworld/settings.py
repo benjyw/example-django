@@ -7,7 +7,6 @@ from typing import List
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 SECRET_KEY = "DEV_SECURITY_KEY"
 
 DEBUG = True
@@ -21,6 +20,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "helloworld.greet",
+    "helloworld.person",
     "helloworld.translate",
 ]
 
@@ -46,19 +46,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "helloworld.wsgi.application"
 
-
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
-
-# Internationalization
-# https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = "en-us"
 
