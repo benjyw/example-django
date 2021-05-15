@@ -7,7 +7,9 @@ from django.db import models
 class Translation(models.Model):
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=["lang", "english_word"], name="lang_english_word")
+            models.UniqueConstraint(
+                fields=["lang", "english_word"], name="lang_english_word"
+            )
         ]
 
     lang = models.CharField(max_length=2)

@@ -7,21 +7,30 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Translation',
+            name="Translation",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('lang', models.CharField(max_length=2)),
-                ('english_word', models.CharField(max_length=20)),
-                ('lang_word', models.CharField(max_length=20)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("lang", models.CharField(max_length=2)),
+                ("english_word", models.CharField(max_length=20)),
+                ("lang_word", models.CharField(max_length=20)),
             ],
         ),
         migrations.AddConstraint(
-            model_name='translation',
-            constraint=models.UniqueConstraint(fields=('lang', 'english_word'), name='lang_english_word'),
+            model_name="translation",
+            constraint=models.UniqueConstraint(
+                fields=("lang", "english_word"), name="lang_english_word"
+            ),
         ),
     ]
