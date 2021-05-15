@@ -20,6 +20,7 @@ ALLOWED_HOSTS: List[str] = []
 INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "helloworld.greet",
+    "helloworld.translate",
 ]
 
 MIDDLEWARE = [

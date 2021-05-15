@@ -3,7 +3,8 @@
 
 python_library(
     dependencies = [
-        "helloworld/greet"
+        "helloworld/greet",
+        "helloworld/translate"
     ]
 )
 
