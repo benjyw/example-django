@@ -14,6 +14,7 @@ DEBUG = True
 
 ALLOWED_HOSTS: List[str] = []
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Application definition
 
