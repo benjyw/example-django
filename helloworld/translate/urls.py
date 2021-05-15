@@ -3,8 +3,8 @@
 
 from django.urls import path
 
-from helloworld.greet import views
+from helloworld.translate import views
 
 urlpatterns = [
-    path("<str:lang>/<str:english_word>", views.index, name="index"),
+    path("<str:slug>/<str:lang>", views.index, name="index"),
 ]

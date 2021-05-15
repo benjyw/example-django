@@ -9,9 +9,7 @@ from helloworld.greet.models import Greeting
 class Translation(models.Model):
     class Meta:
         constraints = [
-            models.UniqueConstraint(
-                fields=["greeting", "lang"], name="greeting_lang"
-            )
+            models.UniqueConstraint(fields=["greeting", "lang"], name="greeting_lang")
         ]
 
     greeting = models.ForeignKey(Greeting, on_delete=models.CASCADE)

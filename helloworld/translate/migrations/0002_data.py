@@ -19,7 +19,7 @@ def create_greetings(apps, schema_editor):
     create("goodevening", "sp", "Buenas tardes")
     create("goodnight", "sp", "Buenas noches")
 
-    create("hello", "fr", "Bonjour")
+    create("hello", "fr", "Allo")
     create("howareyou", "fr", "Comment ça va")
     create("goodmorning", "fr", "Bonjour")
     create("goodevening", "fr", "Bonsoir")
@@ -30,6 +30,7 @@ def create_greetings(apps, schema_editor):
     create("goodmorning", "de", "Guten Morgen")
     create("goodevening", "de", "Guten Abend")
     create("goodnight", "de", "Gute Nacht")
+
 
 class Migration(migrations.Migration):
 

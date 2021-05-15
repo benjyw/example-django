@@ -3,12 +3,12 @@
 
 from django.http import Http404, HttpResponse
 
-from helloworld.greet.models import Greeting
+from helloworld.person.models import Person
 
 
 def index(request, slug):
     try:
-        person_to_greet = PersonToGreet.objects.get(slug=slug)
-        return HttpResponse(f"Hello, {person_to_greet.full_name}")
-    except PersonToGreet.DoesNotExist:
+        person = Person.objects.get(slug=slug)
+        return HttpResponse(f"Hello, {person.full_name}")
+    except Person.DoesNotExist:
         raise Http404(f"No such person: {slug}")
