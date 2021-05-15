@@ -7,6 +7,9 @@
 /.pids
 /.pants.workdir.file_lock*
 
+Local venv for running manage.py etc.
+/.venvs
+
 # Python files
 __pycache__/
 *.pyc
