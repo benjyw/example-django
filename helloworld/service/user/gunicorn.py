@@ -9,6 +9,6 @@ if __name__ == "__main__":
     # If no args were provided, fill them in for convenience.
     if len(sys.argv) == 1:
         sys.argv.extend(
-            ["--config", "python:helloworld.gunicorn_conf", "helloworld.wsgi"]
+            ["--config", "python:helloworld.gunicorn_conf", "helloworld.service.user.wsgi"]
         )
     sys.exit(run())

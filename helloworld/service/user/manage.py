@@ -12,7 +12,7 @@ def main():
     # sys.path.insert(0, os.getcwd())
 
     # Standard Django manage.py boilerplate.
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "helloworld.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "helloworld.service.user.settings")
     from django.core.management import execute_from_command_line
 
     execute_from_command_line(sys.argv)

@@ -28,7 +28,7 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
 ]
 
-ROOT_URLCONF = "helloworld.urls"
+ROOT_URLCONF = "helloworld.service.user.urls"
 
 TEMPLATES = [
     {
@@ -43,8 +43,6 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = "helloworld.wsgi.application"
 
 DATABASES = {
     "default": {
