@@ -9,6 +9,6 @@ from helloworld.translate.models import Translation
 def index(request, slug: str, lang: str) -> HttpResponse:
     try:
         translation = Translation.objects.get(greeting__slug=slug, lang=lang)
-        return HttpResponse(translation.lang_word)
+        return HttpResponse(translation.translation)
     except Translation.DoesNotExist:
         raise Http404(f"No translation in {lang} for {slug}")
