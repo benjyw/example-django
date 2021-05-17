@@ -3,6 +3,6 @@
 
 from helloworld.settings_base import *
 
-WSGI_APPLICATION = "helloworld.service.user.wsgi.application"
+WSGI_APPLICATION = "helloworld.service.welcome.wsgi.application"
 
-ROOT_URLCONF = "helloworld.service.user.urls"
+ROOT_URLCONF = "helloworld.service.welcome.urls"
