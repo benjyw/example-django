@@ -1,11 +1,9 @@
-# Copyright 2020 Pants project contributors.
+# Copyright 2021 Pants project contributors.
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
-from _contextvars import Context
 
 import requests
 from django.http import Http404, HttpResponse
 from django.shortcuts import render
-from django.template.loader import get_template
 
 from helloworld.util.backend import get_backend_url
 
