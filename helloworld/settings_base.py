@@ -58,3 +58,9 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+DEV_PORTS = {
+    "helloworld.service.frontend": 8000,
+    "helloworld.service.user": 8010,
+    "helloworld.service.welcome": 8020,
+}

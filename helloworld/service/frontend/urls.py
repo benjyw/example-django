@@ -4,5 +4,5 @@
 from django.urls import include, path
 
 urlpatterns = [
-    path("person/", include("helloworld.person.urls")),
+    path("", include("helloworld.ui.urls")),
 ]
