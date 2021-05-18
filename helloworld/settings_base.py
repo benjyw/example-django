@@ -4,7 +4,10 @@
 import os
 from typing import List
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# See helloworld.util.mode for values.
+HELLOWORLD_MODE = os.environ.get("HELLOWORLD_MODE", "DEV")
+
+# Construct paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = "DEV_SECURITY_KEY"
@@ -41,11 +44,18 @@ TEMPLATES = [
 ]
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    }
+    # Django chokes if 'default' isn't present at all. But it can be set to an empty dict, which
+    # will be treated as a dummy db.
+    "default": {}
 }
+
+def set_up_database(db_name: str):
+    """Set a service up to connect to a named db."""
+    # TODO: Consult HELLOWORLD_MODE to distinguish dev/staging/prod dbs.
+    DATABASES[db_name] = {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, f"{db_name}.sqlite3"),
+    }
 
 LANGUAGE_CODE = "en-us"
 

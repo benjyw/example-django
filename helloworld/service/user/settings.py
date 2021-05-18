@@ -11,3 +11,5 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "helloworld.person",
 ]
+
+set_up_database("users")

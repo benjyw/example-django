@@ -13,4 +13,4 @@ class Mode(Enum):
 
 
 def get_mode() -> Mode:
-  return Mode[getattr(settings, "MODE", "DEV")]
+  return Mode[getattr(settings, "HELLOWORLD_MODE", "DEV")]

@@ -22,3 +22,6 @@ INSTALLED_APPS = [
     "helloworld.person",
     "helloworld.translate",
 ]
+
+set_up_database("users")
+set_up_database("greetings")
