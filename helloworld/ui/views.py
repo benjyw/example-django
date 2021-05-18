@@ -21,8 +21,12 @@ def index(request) -> HttpResponse:
     lang = request.GET.get("lang", "en")
 
     # Get person's full name.
-    name = query_backend(f"{get_backend_url('helloworld.service.user')}/person/{person_slug}")
+    name = query_backend(
+        f"{get_backend_url('helloworld.service.user')}/person/{person_slug}"
+    )
 
     # Get greeting.
-    greeting = query_backend(f"{get_backend_url('helloworld.service.welcome')}/translate/hello/{lang}")
+    greeting = query_backend(
+        f"{get_backend_url('helloworld.service.welcome')}/translate/hello/{lang}"
+    )
     return HttpResponse(f"RENDER FOR: {greeting} {name}")

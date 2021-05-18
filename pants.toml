@@ -18,6 +18,9 @@ backend_packages.add = [
 # The Python source root is the repo root. See https://www.pantsbuild.org/docs/source-roots.
 root_patterns = ["/"]
 
+[sourcefile-validation]
+config = "@build-support/validate.yaml"
+
 [python-setup]
 # The default interpreter compatibility for code in this repo. Individual targets can override
 #  this with the `compatibility` field. See

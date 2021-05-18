@@ -2,10 +2,9 @@
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
 import os
-from typing import List
+from typing import Any, Dict, List
 
 from helloworld.util.per_app_db_router import PerAppDBRouter
-
 
 HELLOWORLD_MODE = os.environ.get("HELLOWORLD_MODE", "DEV")
 
@@ -24,9 +23,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
-    #"django.contrib.sessions.middleware.SessionMiddleware",
-    #"django.contrib.auth.middleware.AuthenticationMiddleware",
-    #"django.contrib.messages.middleware.MessageMiddleware",
+    # "django.contrib.sessions.middleware.SessionMiddleware",
+    # "django.contrib.auth.middleware.AuthenticationMiddleware",
+    # "django.contrib.messages.middleware.MessageMiddleware",
 ]
 
 TEMPLATES = [
@@ -45,11 +44,12 @@ TEMPLATES = [
     },
 ]
 
-DATABASES = {
+DATABASES: Dict[str, Any] = {
     # Django chokes if 'default' isn't present at all. But it can be set to an empty dict, which
     # will be treated as a dummy db.
     "default": {}
 }
+
 
 def set_up_database(db_name: str):
     """Set a service up to connect to a named db."""
@@ -59,13 +59,18 @@ def set_up_database(db_name: str):
         "NAME": os.path.join(BASE_DIR, f"{db_name}.sqlite3"),
     }
 
-DATABASE_ROUTERS = [PerAppDBRouter({
-    "contenttypes": "users",
-    "auth": "users",
-    "person": "users",
-    "greet": "greetings",
-    "translate": "greetings"
-})]
+
+DATABASE_ROUTERS = [
+    PerAppDBRouter(
+        {
+            "contenttypes": "users",
+            "auth": "users",
+            "person": "users",
+            "greet": "greetings",
+            "translate": "greetings",
+        }
+    )
+]
 
 LANGUAGE_CODE = "en-us"
 

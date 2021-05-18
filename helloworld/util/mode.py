@@ -7,10 +7,10 @@ from django.conf import settings
 
 
 class Mode(Enum):
-  DEV = "DEV"
-  STAGING = "STAGING"
-  PROD = "PROD"
+    DEV = "DEV"
+    STAGING = "STAGING"
+    PROD = "PROD"
 
 
 def get_mode() -> Mode:
-  return Mode[getattr(settings, "HELLOWORLD_MODE", "DEV")]
+    return Mode[getattr(settings, "HELLOWORLD_MODE", "DEV")]
