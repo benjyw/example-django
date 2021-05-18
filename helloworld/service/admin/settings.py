@@ -15,9 +15,11 @@ MIDDLEWARE += [
 
 INSTALLED_APPS = [
     "django.contrib.contenttypes",
+    "django.contrib.sessions",
     "django.contrib.auth",
     "django.contrib.admin",
     "django.contrib.messages",
+    "django.contrib.staticfiles",
     "helloworld.greet",
     "helloworld.person",
     "helloworld.translate",
@@ -25,3 +27,8 @@ INSTALLED_APPS = [
 
 set_up_database("users")
 set_up_database("greetings")
+
+# The admin UI expects to auth against the "default" db, so we alias it here.
+DATABASES["default"] = DATABASES["users"]
+
+STATIC_URL = '/static/'

@@ -64,7 +64,9 @@ DATABASE_ROUTERS = [
     PerAppDBRouter(
         {
             "contenttypes": "users",
+            "sessions": "users",
             "auth": "users",
+            "admin": "users",
             "person": "users",
             "greet": "greetings",
             "translate": "greetings",
