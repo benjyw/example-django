@@ -4,7 +4,9 @@
 import os
 from typing import List
 
-# See helloworld.util.mode for values.
+from helloworld.util.per_app_db_router import PerAppDBRouter
+
+
 HELLOWORLD_MODE = os.environ.get("HELLOWORLD_MODE", "DEV")
 
 # Construct paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -56,6 +58,14 @@ def set_up_database(db_name: str):
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": os.path.join(BASE_DIR, f"{db_name}.sqlite3"),
     }
+
+DATABASE_ROUTERS = [PerAppDBRouter({
+    "contenttypes": "users",
+    "auth": "users",
+    "person": "users",
+    "greet": "greetings",
+    "translate": "greetings"
+})]
 
 LANGUAGE_CODE = "en-us"
 
