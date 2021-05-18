@@ -19,9 +19,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
+    #"django.contrib.sessions.middleware.SessionMiddleware",
+    #"django.contrib.auth.middleware.AuthenticationMiddleware",
+    #"django.contrib.messages.middleware.MessageMiddleware",
 ]
 
 TEMPLATES = [

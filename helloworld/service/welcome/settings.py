@@ -9,7 +9,6 @@ ROOT_URLCONF = "helloworld.service.welcome.urls"
 
 INSTALLED_APPS = [
     "django.contrib.contenttypes",
-    "django.contrib.admin",
     "helloworld.greet",
     "helloworld.person",
     "helloworld.translate",
