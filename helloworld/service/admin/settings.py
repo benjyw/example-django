@@ -5,11 +5,13 @@ from helloworld.settings_base import *
 
 WSGI_APPLICATION = "helloworld.service.welcome.wsgi.application"
 
-ROOT_URLCONF = "helloworld.service.welcome.urls"
+ROOT_URLCONF = "helloworld.service.frontend.urls"
 
 INSTALLED_APPS = [
     "django.contrib.contenttypes",
+    "django.contrib.auth",
     "django.contrib.admin",
+    "django.contrib.messages",
     "helloworld.greet",
     "helloworld.person",
     "helloworld.translate",

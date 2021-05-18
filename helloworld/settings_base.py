@@ -17,15 +17,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Application definition
 
-INSTALLED_APPS = [
-    "django.contrib.contenttypes",
-    "helloworld.greet",
-    "helloworld.person",
-    "helloworld.translate",
-]
-
 MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
 ]
 
 TEMPLATES = [
@@ -35,6 +31,8 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
             ],
@@ -61,6 +59,7 @@ USE_TZ = True
 
 DEV_PORTS = {
     "helloworld.service.frontend": 8000,
+    "helloworld.service.admin": 8001,
     "helloworld.service.user": 8010,
     "helloworld.service.welcome": 8020,
 }

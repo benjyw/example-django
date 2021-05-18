@@ -13,20 +13,22 @@ def create_greetings(apps, schema_editor):
         greeting = Greeting.objects.get(slug=slug)
         Translation(greeting=greeting, lang=lang, translation=translation).save()
 
+    create("hello", "en", "Hello")
+    create("goodmorning", "en", "Good morning")
+    create("goodevening", "en", "Good evening")
+    create("goodnight", "en", "Good night")
+
     create("hello", "es", "Hola")
-    create("howareyou", "es", "cómo estás")
     create("goodmorning", "es", "Buenos días")
     create("goodevening", "es", "Buenas tardes")
     create("goodnight", "es", "Buenas noches")
 
     create("hello", "fr", "Allo")
-    create("howareyou", "fr", "Comment ça va")
     create("goodmorning", "fr", "Bonjour")
     create("goodevening", "fr", "Bonsoir")
     create("goodnight", "fr", "Bonne nuit")
 
     create("hello", "de", "Hallo")
-    create("howareyou", "de", "Wie geht es dir")
     create("goodmorning", "de", "Guten Morgen")
     create("goodevening", "de", "Guten Abend")
     create("goodnight", "de", "Gute Nacht")
