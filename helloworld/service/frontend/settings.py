@@ -8,5 +8,7 @@ WSGI_APPLICATION = "helloworld.service.welcome.wsgi.application"
 ROOT_URLCONF = "helloworld.service.frontend.urls"
 
 INSTALLED_APPS = [
+    "django.contrib.contenttypes",
+    "django.contrib.auth",
     "helloworld.ui",
 ]
