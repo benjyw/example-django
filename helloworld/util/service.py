@@ -10,7 +10,8 @@ class Service:
     def __init__(self, name_or_file: str):
         if os.path.sep in name_or_file:
             # This is the __file__ of the caller, so compute the service name.
-            self._name = ".".join(PurePath(name_or_file).parts[0:-1])
+            rparts = list(reversed(PurePath(name_or_file).parts))
+            self._name = ".".join(reversed(rparts[1:rparts.index("helloworld")+1]))
         else:
             self._name = name_or_file
 
