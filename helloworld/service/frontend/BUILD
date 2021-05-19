@@ -1,7 +1,12 @@
 # Copyright 2021 Pants project contributors.
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
-python_library(name="lib")
+python_library(
+    name="lib",
+    dependencies = [
+        "helloworld/ui",
+    ]
+)
 
 pex_binary(
     name = "manage",
