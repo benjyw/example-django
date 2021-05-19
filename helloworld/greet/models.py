@@ -2,7 +2,7 @@
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
 from datetime import time
-from typing import Optional
+from typing import List, Optional
 
 from django.db import models
 
@@ -15,7 +15,9 @@ class Greeting(models.Model):
 
     @classmethod
     def for_time_of_day(cls, time_of_day: time) -> Optional["Greeting"]:
-        greetings = list(cls.objects.filter(start_time__lte=time_of_day, end_time__gte=time_of_day))
+        greetings: List["Greeting"] = list(
+            cls.objects.filter(start_time__lte=time_of_day, end_time__gte=time_of_day)
+        )
         if greetings:
             return greetings[0]
         return None

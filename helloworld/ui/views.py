@@ -30,4 +30,6 @@ def index(request) -> HttpResponse:
     greeting = query_backend(
         f"{get_backend_url('helloworld.service.welcome')}/translate/hello/{lang}"
     )
-    return render(request, "helloworld/ui/index.html", {"greeting": greeting, "name": name})
+    return render(
+        request, "helloworld/ui/index.html", {"greeting": greeting, "name": name}
+    )

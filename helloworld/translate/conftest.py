@@ -11,7 +11,7 @@ def pytest_configure():
     settings.configure(
         TIME_ZONE="UTC",
         USE_TZ=True,
-        INSTALLED_APPS=["helloworld.greet"],
+        INSTALLED_APPS=["helloworld.greet", "helloworld.translate"],
         DATABASES={
             "default": {
                 "ENGINE": "django.db.backends.sqlite3",

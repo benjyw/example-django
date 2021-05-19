@@ -21,4 +21,6 @@ def for_time_of_day(request, time_of_day: str):
     if not greeting:
         # Fall back to a generic greeting.
         greeting = Greeting.objects.get(slug="hello")
+    if greeting is None:
+        raise Http404(f"No greeting found for time of day: {time_of_day}")
     return HttpResponse(greeting.salutation)

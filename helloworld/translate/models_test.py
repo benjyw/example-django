@@ -11,7 +11,8 @@ def test_database_is_seeded():
     hello = Greeting.objects.get(slug="hello")
     translations = {tr.lang: tr.translation for tr in hello.translation_set.all()}
     assert {
-        "sp": "Hola",
+        "en": "Hello",
+        "es": "Hola",
         "fr": "Allo",
         "de": "Hallo",
     } == translations

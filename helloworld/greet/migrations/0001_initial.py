@@ -7,18 +7,25 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Greeting',
+            name="Greeting",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('slug', models.CharField(max_length=30, unique=True)),
-                ('start_time', models.TimeField(null=True)),
-                ('end_time', models.TimeField(null=True)),
-                ('salutation', models.CharField(max_length=30)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("slug", models.CharField(max_length=30, unique=True)),
+                ("start_time", models.TimeField(null=True)),
+                ("end_time", models.TimeField(null=True)),
+                ("salutation", models.CharField(max_length=30)),
             ],
         ),
     ]
