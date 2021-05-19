@@ -6,5 +6,5 @@ from helloworld.util.service import Service
 
 
 if __name__ == "__main__":
-    Service("helloworld.service.user").run_manage()
+    Service(__file__).run_manage()
 

@@ -4,4 +4,4 @@
 from helloworld.util.service import Service
 
 
-application = Service("helloworld.service.welcome").wsgi_application()
+application = Service(__file__).wsgi_application()

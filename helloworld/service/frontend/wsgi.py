@@ -1,10 +1,7 @@
 # Copyright 2021 Pants project contributors.
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
-import os
+from helloworld.util.service import Service
 
-from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "helloworld.service.frontend.settings")
-
-application = get_wsgi_application()
+application = Service(__file__).wsgi_application()
