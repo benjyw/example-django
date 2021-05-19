@@ -84,6 +84,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+WSGI_APPLICATION = "helloworld.wsgi.application"
+
 DEV_PORTS = {
     "helloworld.service.frontend": 8000,
     "helloworld.service.admin": 8001,

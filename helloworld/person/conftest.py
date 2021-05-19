@@ -3,5 +3,4 @@
 
 from helloworld.util.settings_for_tests import configure_settings
 
-
 configure_settings(["helloworld.person"])

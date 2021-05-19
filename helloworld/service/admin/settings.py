@@ -1,13 +1,11 @@
 # Copyright 2021 Pants project contributors.
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
-from helloworld.settings_base import *
-
-WSGI_APPLICATION = "helloworld.service.admin.wsgi.application"
+from helloworld.settings_base import *  # noqa: F403
 
 ROOT_URLCONF = "helloworld.service.admin.urls"
 
-MIDDLEWARE += [
+MIDDLEWARE += [  # noqa: F405
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
@@ -25,10 +23,10 @@ INSTALLED_APPS = [
     "helloworld.translate",
 ]
 
-set_up_database("users")
-set_up_database("greetings")
+set_up_database("users")  # noqa: F405
+set_up_database("greetings")  # noqa: F405
 
 # The admin UI expects to auth against the "default" db, so we alias it here.
-DATABASES["default"] = DATABASES["users"]
+DATABASES["default"] = DATABASES["users"]  # noqa: F405
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
