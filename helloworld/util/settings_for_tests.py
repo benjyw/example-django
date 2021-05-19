@@ -9,6 +9,7 @@ from django.conf import settings
 
 
 def configure_settings(apps: List[str]) -> None:
+    """Minimal settings for unittests."""
     settings.configure(
         TIME_ZONE="UTC",
         USE_TZ=True,

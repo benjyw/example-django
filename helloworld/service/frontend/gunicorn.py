@@ -1,14 +1,8 @@
 # Copyright 2021 Pants project contributors.
 # Licensed under the Apache License, Version 2.0 (see LICENSE).
 
-import sys
+from helloworld.util.service import Service
 
-from gunicorn.app.wsgiapp import run
 
 if __name__ == "__main__":
-    # If no args were provided, fill them in for convenience.
-    if len(sys.argv) == 1:
-        sys.argv.extend(
-            ["--config", "python:helloworld.gunicorn_conf", "helloworld.service.frontend.wsgi"]
-        )
-    sys.exit(run())
+    Service("helloworld.service.frontend").run_gunicorn()

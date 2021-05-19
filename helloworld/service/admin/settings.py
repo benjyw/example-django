@@ -3,7 +3,7 @@
 
 from helloworld.settings_base import *
 
-WSGI_APPLICATION = "helloworld.service.welcome.wsgi.application"
+WSGI_APPLICATION = "helloworld.service.admin.wsgi.application"
 
 ROOT_URLCONF = "helloworld.service.admin.urls"
 
