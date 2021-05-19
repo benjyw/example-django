@@ -28,6 +28,13 @@ class Service:
 
     def run_manage(self):
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", f"{self._name}.settings")
+        args = sys.argv
+        if len(sys.argv) == 2 and sys.argv[1] == "runserver":
+            # If no port was provided, use the dev port for this service.
+            from django.conf import settings
+
+            dev_port = settings.DEV_PORTS[self._name]
+            args += [f"{dev_port}"]
         from django.core.management import execute_from_command_line
 
-        execute_from_command_line(sys.argv)
+        execute_from_command_line(args)

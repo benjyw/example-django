@@ -6,5 +6,5 @@ from django.urls import path
 from helloworld.translate import views
 
 urlpatterns = [
-    path("<str:slug>/<str:lang>", views.index, name="index"),
+    path("<str:slug>/<str:lang>/", views.index, name="index"),
 ]
